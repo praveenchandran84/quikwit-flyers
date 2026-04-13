@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quikwit - Fitness Centres Flyer</title>
+    <style>
+        :root {
+            --quikwit-purple: #746EEF;
+            --dark-text: #1C1C1E;
+            --grey-text: #48484A;
+            --light-bg: #F9F9FB;
+            --accent-green: #34C759;
+        }
+
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; padding: 0; color: var(--dark-text); line-height: 1.6;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 20mm;
+            margin: auto;
+            background: white;
+            position: relative;
+            overflow: hidden;
+            page-break-after: always;
+        }
+
+        /* Typography */
+        h1 { font-size: 34pt; color: var(--quikwit-purple); margin-bottom: 12pt; line-height: 1.1; }
+        h2 { font-size: 22pt; color: var(--quikwit-purple); margin-top: 30pt; margin-bottom: 15pt; }
+        .hero-subtext { font-size: 16pt; font-weight: 500; color: var(--grey-text); margin-bottom: 25pt; }
+
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40pt; }
+        .logo { font-size: 26pt; font-weight: 900; color: var(--quikwit-purple); letter-spacing: -1px; }
+
+        /* Value Prop Sections */
+        .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30pt; margin-bottom: 30pt; }
+        .value-item { padding: 15pt; border-left: 4px solid var(--quikwit-purple); background: var(--light-bg); }
+        .value-item p { margin: 0; font-size: 12pt; font-weight: 500; }
+
+        /* Questions Section */
+        .questions-container { 
+            background: var(--quikwit-purple); 
+            color: white; 
+            padding: 25pt; 
+            border-radius: 15pt;
+            margin-top: 20pt;
+        }
+        .questions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15pt; }
+        .q-bubble { 
+            background: rgba(255,255,255,0.15); 
+            padding: 10pt 15pt; 
+            border-radius: 10pt; 
+            font-size: 11pt;
+            font-style: italic;
+        }
+
+        /* Features */
+        .badges { display: flex; justify-content: space-between; margin-top: 40pt; }
+        .badge { text-align: center; flex: 1; }
+        .badge strong { font-size: 24pt; color: var(--quikwit-purple); display: block; }
+
+        /* Footer */
+        .footer-cta { 
+            position: absolute; 
+            bottom: 20mm; 
+            left: 20mm; 
+            right: 20mm;
+            text-align: center;
+            border-top: 1pt solid #EEE;
+            padding-top: 20pt;
+        }
+        .btn {
+            display: inline-block;
+            background: var(--quikwit-purple);
+            color: white;
+            padding: 12pt 25pt;
+            border-radius: 30pt;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13pt;
+            margin-top: 10pt;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { margin: 0; box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <div class="logo">Quikwit AI</div>
+            <div style="font-weight: bold; color: var(--grey-text);">FITNESS CENTRES</div>
+        </div>
+
+        <h1>Your 24/7 AI Front Desk</h1>
+        <div class="hero-subtext">Never miss a membership enquiry again, even when your team is at their busiest.</div>
+
+        <div class="value-grid">
+            <div class="value-item">
+                <p>No enquiries missed and potential memberships lost when you are busy or when you are away.</p>
+            </div>
+            <div class="value-item">
+                <p>Your staff can focus on providing great service to members in your gym while Quikwit handles the routine.</p>
+            </div>
+        </div>
+
+        <p style="font-size: 13pt; margin-bottom: 20pt;">
+            Quikwit answers questions instantly and schedules trial classes and bookings, ensuring your sales funnel never stops moving.
+        </p>
+
+        <div class="questions-container">
+            <h3 style="margin-top: 0; color: white;">Answers Hundreds of Member Questions:</h3>
+            <div class="questions-grid">
+                <div class="q-bubble">"What are your membership plans and prices?"</div>
+                <div class="q-bubble">"Do you offer a free trial?"</div>
+                <div class="q-bubble">"What classes do you have this week?"</div>
+                <div class="q-bubble">"Do you have personal trainers?"</div>
+                <div class="q-bubble">"What time do you open and close?"</div>
+                <div class="q-bubble">...and hundreds more</div>
+            </div>
+        </div>
+
+        <div class="badges">
+            <div class="badge"><strong>24/7</strong>Availability</div>
+            <div class="badge"><strong>2 Min</strong>Setup Time</div>
+            <div class="badge"><strong>40+</strong>Languages</div>
+        </div>
+
+        <div class="footer-cta">
+            <div style="font-weight: 600; font-size: 14pt;">Ready to grow your gym membership?</div>
+            <a href="#" class="btn">Book a Free Demo</a>
+            <div style="margin-top: 10pt; font-size: 10pt; color: var(--grey-text);">sales@quikwit.chat | quikwit.chat/fitness-centre-chatbot</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <h2>Empower Your Staff, Grow Your Gym</h2>
+        <p style="font-size: 13pt;">Quikwit isn't just a chatbot; it's a digital extension of your front desk team. While your trainers are on the floor, your AI agent is securing the next lead.</p>
+
+        <div style="margin-top: 30pt;">
+            <div style="margin-bottom: 20pt;">
+                <h3 style="color: var(--quikwit-purple);">✓ Instant Lead Capture</h3>
+                <p>When someone is ready to sign up, Quikwit collects their details automatically—no forms, no friction, and zero delay.</p>
+            </div>
+
+            <div style="margin-bottom: 20pt;">
+                <h3 style="color: var(--quikwit-purple);">✓ Multi-Channel Reach</h3>
+                <p>One single setup allows you to respond to potential members on your <strong>Website, WhatsApp, Instagram, and Telegram</strong> simultaneously.</p>
+            </div>
+
+            <div style="margin-bottom: 20pt;">
+                <h3 style="color: var(--quikwit-purple);">✓ Automated Scheduling</h3>
+                <p>Allow prospects to book trial sessions or tours instantly through the chat. Quikwit passes the details to your team for a seamless handoff.</p>
+            </div>
+        </div>
+
+        <div style="background: var(--light-bg); padding: 20pt; border-radius: 10pt; margin-top: 30pt;">
+            <p style="margin: 0; font-weight: 600; color: var(--quikwit-purple);">Simple Setup. No Coding.</p>
+            <p style="margin-top: 5pt;">Most fitness centres are fully operational in under 10 minutes. Our team provides free setup assistance to ensure your AI agent knows your gym inside and out.</p>
+        </div>
+
+        <div class="footer-cta">
+            <div style="font-weight: 600; font-size: 12pt;">Available for businesses in Australia, New Zealand, and globally.</div>
+            <div style="margin-top: 15pt; font-size: 16pt; font-weight: 800; color: var(--quikwit-purple);">quikwit.chat</div>
+        </div>
+    </div>
+
+</body>
+</html>
