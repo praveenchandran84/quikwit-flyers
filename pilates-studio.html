@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quikwit - Pilates Studio Flyer</title>
+    <style>
+        :root {
+            --quikwit-purple: #746EEF;
+            --navy-blue: #1A2B49;
+            --dark-text: #1C1C1E;
+            --grey-text: #48484A;
+            --light-bg: #F9F9FB;
+        }
+
+        * { box-sizing: border-box; -webkit-print-color-adjust: exact; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
+            margin: 0; padding: 0; color: var(--dark-text); line-height: 1.4;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            padding: 12mm 18mm;
+            margin: auto;
+            background: white;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            page-break-after: always;
+        }
+
+        /* Header */
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15pt; }
+        .logo { font-size: 26pt; font-weight: 900; color: var(--quikwit-purple); letter-spacing: -1px; }
+
+        /* Typography */
+        h1 { font-size: 28pt; color: var(--quikwit-purple); margin-bottom: 8pt; line-height: 1.1; margin-top: 0; }
+        h2 { font-size: 22pt; color: var(--quikwit-purple); margin-top: 0; margin-bottom: 12pt; }
+        .hero-subtext { font-size: 13pt; font-weight: 500; color: var(--grey-text); margin-bottom: 12pt; }
+
+        /* Value Prop Sections */
+        .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; margin-bottom: 12pt; }
+        .value-item { padding: 10pt; border-left: 4px solid var(--quikwit-purple); background: var(--light-bg); border-radius: 0 8pt 8pt 0; }
+        .value-item p { margin: 0; font-size: 10pt; font-weight: 600; }
+
+        /* Actions Section */
+        .actions-box {
+            border: 2px dashed var(--quikwit-purple);
+            padding: 12pt;
+            border-radius: 12pt;
+            margin-bottom: 15pt;
+            background: #fdfdff;
+        }
+        .actions-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 8pt; }
+        .action-item { font-size: 10pt; font-weight: 700; color: var(--quikwit-purple); display: flex; align-items: center; }
+        .action-item::before { content: "→"; margin-right: 5pt; }
+
+        /* Questions Section - Navy Blue */
+        .questions-section { 
+            background: var(--navy-blue); 
+            color: white; 
+            padding: 15pt; 
+            border-radius: 12pt;
+            margin-bottom: 15pt;
+        }
+        .questions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 8pt; }
+        .q-bubble { 
+            background: rgba(255,255,255,0.1); 
+            padding: 6pt 10pt; 
+            border-radius: 8pt; 
+            font-size: 9.5pt;
+            border: 1pt solid rgba(255,255,255,0.15);
+            font-style: italic;
+        }
+
+        /* Features Bar */
+        .badges { display: flex; justify-content: space-around; margin-bottom: 15pt; background: var(--light-bg); padding: 10pt; border-radius: 12pt; }
+        .badge { text-align: center; }
+        .badge strong { font-size: 18pt; color: var(--quikwit-purple); display: block; }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--quikwit-purple);
+            color: white;
+            padding: 20pt;
+            border-radius: 12pt;
+            text-align: center;
+            margin-top: 10pt;
+        }
+        .cta-title { font-size: 16pt; font-weight: 800; margin-bottom: 4pt; }
+        .btn {
+            display: inline-block;
+            background: white;
+            color: var(--quikwit-purple);
+            padding: 8pt 20pt;
+            border-radius: 30pt;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 11pt;
+            margin-top: 8pt;
+            text-transform: uppercase;
+        }
+
+        @media print {
+            body { background: none; }
+            .page { margin: 0; box-shadow: none; border: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="page">
+        <div class="header">
+            <div class="logo">Quikwit AI</div>
+            <div style="font-weight: bold; color: var(--grey-text); text-transform: uppercase; font-size: 9pt;">24/7 Pilates Studio Automation</div>
+        </div>
+
+        <h1>Elevate Your Pilates Studio</h1>
+        <div class="hero-subtext">Manage enquiries and bookings seamlessly while your instructors focus on form and flow.</div>
+
+        <div class="value-grid">
+            <div class="value-item">
+                <p>Never miss a potential new student while you are teaching or the studio is closed.</p>
+            </div>
+            <div class="value-item">
+                <p>Allow your team to focus on great sessions while Quikwit handles repetitive enquiries.</p>
+            </div>
+        </div>
+
+        <div class="actions-box">
+            <h3 style="margin: 0; font-size: 12pt; color: var(--navy-blue);">Inbuilt AI "Actions" for Pilates</h3>
+            <p style="font-size: 10pt; margin: 4pt 0;">Quikwit does the work for you, moving students from "interested" to "on the mat":</p>
+            <div class="actions-list">
+                <div class="action-item">Book an Intro Class</div>
+                <div class="action-item">Schedule Studio Tours</div>
+                <div class="action-item">Book Private Sessions</div>
+                <div class="action-item">Request Instructor Callbacks</div>
+            </div>
+        </div>
+
+        <div class="questions-section">
+            <h3 style="margin: 0; font-size: 12pt; text-transform: uppercase; letter-spacing: 0.5px;">Instant Responses for Pilates Students</h3>
+            <div class="questions-grid">
+                <div class="q-bubble">“What is the difference between Mat and Reformer?”</div>
+                <div class="q-bubble">“Do you offer an introductory offer?”</div>
+                <div class="q-bubble">“What classes do you have this evening?”</div>
+                <div class="q-bubble">“What should I wear to my first class?”</div>
+                <div class="q-bubble">“Can I do Pilates if I have a back injury?”</div>
+                <div class="q-bubble">...and hundreds more</div>
+            </div>
+        </div>
+
+        <div class="badges">
+            <div class="badge"><strong>24/7</strong>Online Desk</div>
+            <div class="badge"><strong>2 Min</strong>Setup</div>
+            <div class="badge"><strong>USD 20/mo</strong>Starting Price</div>
+        </div>
+
+        <div class="cta-section">
+            <div class="cta-title">Grow Your Pilates Community Today</div>
+            <div style="font-size: 9pt; opacity: 0.9;">Plans start as cheap as USD 20 per month. No coding, no contracts.</div>
+            <a href="#" class="btn">Book a Free Demo</a>
+            <div style="margin-top: 10pt; font-size: 9pt;">sales@quikwit.chat | quikwit.chat/pilates-studio-chatbot</div>
+        </div>
+    </div>
+
+    <div class="page">
+        <div class="header">
+            <div class="logo">Quikwit AI</div>
+        </div>
+
+        <h2>Scale Your Studio, Not Your Stress</h2>
+        <p style="font-size: 11pt; margin-bottom: 25pt;">Quikwit acts as a native extension of your facility, ensuring your digital presence is as boutique and professional as your classes.</p>
+
+        <div style="margin-bottom: 20pt;">
+            <h3 style="color: var(--quikwit-purple); margin-bottom: 6pt; font-size: 14pt;">✓ Seamless Lead Capture</h3>
+            <p style="margin: 0; font-size: 11pt;">When a new student is ready to start their journey, Quikwit collects their details instantly. No more manual follow-ups on missed calls or website forms.</p>
+        </div>
+
+        <div style="margin-bottom: 20pt;">
+            <h3 style="color: var(--quikwit-purple); margin-bottom: 6pt; font-size: 14pt;">✓ Multi-Channel Support</h3>
+            <p style="margin: 0; font-size: 11pt;">Connect with students where they are—on Website, WhatsApp, Instagram, and Telegram. One setup manages them all with 40+ language support.</p>
+        </div>
+
+        <div style="margin-bottom: 20pt;">
+            <h3 style="color: var(--quikwit-purple); margin-bottom: 6pt; font-size: 14pt;">✓ Effortless Content Updates</h3>
+            <p style="margin: 0; font-size: 11pt;">Update your teacher bios, new workshops, or reformer availability and the AI adapts instantly. No technical skills or developers required.</p>
+        </div>
+
+        <div style="background: var(--light-bg); padding: 18pt; border-radius: 12pt; border: 1pt solid #eee; margin-top: 10pt;">
+            <p style="margin: 0; font-weight: 800; color: var(--navy-blue); font-size: 12pt;">Low Cost. High Value. Plans from USD 20 per month.</p>
+            <p style="margin-top: 6pt; font-size: 11pt; color: var(--grey-text);">Quikwit is the most affordable way to ensure your studio stays competitive and professional 24/7 without breaking the bank.</p>
+        </div>
+
+        <div style="margin-top: auto;"></div>
+
+        <div class="cta-section">
+            <div class="cta-title">Get in Touch to See Quikwit in Action</div>
+            <div style="font-size: 10pt; margin-bottom: 8pt; opacity: 0.9;">Serving boutique studios in Australia, New Zealand, and globally.</div>
+            <div style="font-weight: 800; font-size: 20pt;">quikwit.chat</div>
+        </div>
+    </div>
+
+</body>
+</html>
