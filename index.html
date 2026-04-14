@@ -22,7 +22,7 @@
         .page {
             width: 210mm;
             height: 297mm;
-            padding: 15mm 20mm;
+            padding: 24mm 24mm;
             margin: auto;
             background: white;
             position: relative;
@@ -32,41 +32,53 @@
         }
 
         /* Header */
-        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20pt; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15pt; }
         .logo { font-size: 26pt; font-weight: 900; color: var(--quikwit-purple); letter-spacing: -1px; }
 
         /* Typography */
-        h1 { font-size: 30pt; color: var(--quikwit-purple); margin-bottom: 8pt; line-height: 1.1; margin-top: 0; }
-        h2 { font-size: 22pt; color: var(--quikwit-purple); margin-top: 0; margin-bottom: 10pt; }
-        .hero-subtext { font-size: 14pt; font-weight: 500; color: var(--grey-text); margin-bottom: 15pt; }
+        h1 { font-size: 28pt; color: var(--quikwit-purple); margin-bottom: 8pt; line-height: 1.1; margin-top: 0; }
+        h2 { font-size: 22pt; color: var(--quikwit-purple); margin-top: 0; margin-bottom: 12pt; }
+        .hero-subtext { font-size: 13pt; font-weight: 500; color: var(--grey-text); margin-bottom: 12pt; }
 
         /* Value Prop Sections */
-        .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15pt; margin-bottom: 15pt; }
+        .value-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12pt; margin-bottom: 12pt; }
         .value-item { padding: 10pt; border-left: 4px solid var(--quikwit-purple); background: var(--light-bg); border-radius: 0 8pt 8pt 0; }
-        .value-item p { margin: 0; font-size: 10.5pt; font-weight: 600; }
+        .value-item p { margin: 0; font-size: 10pt; font-weight: 600; }
+
+        /* Actions Section */
+        .actions-box {
+            border: 2px dashed var(--quikwit-purple);
+            padding: 12pt;
+            border-radius: 12pt;
+            margin-bottom: 15pt;
+            background: #fdfdff;
+        }
+        .actions-list { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 8pt; }
+        .action-item { font-size: 10pt; font-weight: 700; color: var(--quikwit-purple); display: flex; align-items: center; }
+        .action-item::before { content: "→"; margin-right: 5pt; }
 
         /* Questions Section - Navy Blue */
         .questions-section { 
             background: var(--navy-blue); 
             color: white; 
-            padding: 18pt; 
+            padding: 15pt; 
             border-radius: 12pt;
-            margin-bottom: 20pt;
+            margin-bottom: 15pt;
         }
-        .questions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 12pt; }
+        .questions-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8pt; margin-top: 8pt; }
         .q-bubble { 
             background: rgba(255,255,255,0.1); 
-            padding: 8pt 12pt; 
+            padding: 6pt 10pt; 
             border-radius: 8pt; 
-            font-size: 10pt;
+            font-size: 9.5pt;
             border: 1pt solid rgba(255,255,255,0.15);
             font-style: italic;
         }
 
         /* Features Bar */
-        .badges { display: flex; justify-content: space-around; margin-bottom: 20pt; background: var(--light-bg); padding: 12pt; border-radius: 12pt; }
+        .badges { display: flex; justify-content: space-around; margin-bottom: 15pt; background: var(--light-bg); padding: 10pt; border-radius: 12pt; }
         .badge { text-align: center; }
-        .badge strong { font-size: 20pt; color: var(--quikwit-purple); display: block; }
+        .badge strong { font-size: 18pt; color: var(--quikwit-purple); display: block; }
 
         /* CTA Section - Quikwit Brand Color */
         .cta-section {
@@ -75,19 +87,19 @@
             padding: 20pt;
             border-radius: 12pt;
             text-align: center;
-            margin-top: auto; /* Anchors to bottom without overlapping */
+            margin-top: 10pt; /* Space between content and footer */
         }
-        .cta-title { font-size: 18pt; font-weight: 800; margin-bottom: 5pt; }
+        .cta-title { font-size: 16pt; font-weight: 800; margin-bottom: 4pt; }
         .btn {
             display: inline-block;
             background: white;
             color: var(--quikwit-purple);
-            padding: 10pt 25pt;
+            padding: 8pt 20pt;
             border-radius: 30pt;
             text-decoration: none;
             font-weight: 800;
-            font-size: 12pt;
-            margin-top: 10pt;
+            font-size: 11pt;
+            margin-top: 8pt;
             text-transform: uppercase;
         }
 
@@ -102,27 +114,34 @@
     <div class="page">
         <div class="header">
             <div class="logo">Quikwit AI</div>
-            <div style="font-weight: bold; color: var(--grey-text); text-transform: uppercase; font-size: 10pt;">Industry: Fitness Centres</div>
+            <div style="font-weight: bold; color: var(--grey-text); text-transform: uppercase; font-size: 9pt;">24/7 Front Desk Automation</div>
         </div>
 
-        <h1>Your 24/7 AI Front Desk</h1>
-        <div class="hero-subtext">Never miss a membership enquiry again, even when your team is at their busiest.</div>
+        <h1>Smart AI for Fitness Centres</h1>
+        <div class="hero-subtext">Automate your enquiries and operations so your team can focus on the floor.</div>
 
         <div class="value-grid">
             <div class="value-item">
-                <p>No enquiries missed and potential memberships lost when you are busy or when you are away.</p>
+                <p>No more missed leads while your staff is busy or the gym is closed.</p>
             </div>
             <div class="value-item">
-                <p>Your staff can focus on providing great service while Quikwit answers enquiries instantly.</p>
+                <p>Staff focus on high-touch service while Quikwit handles routine bookings.</p>
             </div>
         </div>
 
-        <p style="font-size: 11pt; margin-bottom: 15pt; color: var(--grey-text);">
-            Quikwit handles your website and WhatsApp enquiries automatically, scheduling trial classes and bookings while your team stays focused on the gym floor.
-        </p>
+        <div class="actions-box">
+            <h3 style="margin: 0; font-size: 12pt; color: var(--navy-blue);">Beyond Chat: Inbuilt AI "Actions"</h3>
+            <p style="font-size: 10pt; margin: 4pt 0;">Your AI agent doesn't just talk—it executes tasks for your prospects:</p>
+            <div class="actions-list">
+                <div class="action-item">Book a trial class</div>
+                <div class="action-item">Schedule follow-up calls</div>
+                <div class="action-item">Book trainer sessions</div>
+                <div class="action-item">Confirm memberships</div>
+            </div>
+        </div>
 
         <div class="questions-section">
-            <h3 style="margin: 0; font-size: 13pt; text-transform: uppercase; letter-spacing: 0.5px;">Agent Capability: Instant Answers</h3>
+            <h3 style="margin: 0; font-size: 12pt; text-transform: uppercase; letter-spacing: 0.5px;">Instant Responses to Member Enquiries</h3>
             <div class="questions-grid">
                 <div class="q-bubble">“What are your membership plans and prices?”</div>
                 <div class="q-bubble">“Do you offer a free trial?”</div>
@@ -141,41 +160,45 @@
 
         <div class="cta-section">
             <div class="cta-title">Ready to grow your gym membership?</div>
-            <div style="font-size: 10pt; opacity: 0.9;">No coding required. Set up your AI front desk in minutes.</div>
+            <div style="font-size: 9pt; opacity: 0.9;">No coding, no friction. Set up your AI front desk in minutes.</div>
             <a href="#" class="btn">Book a Free Demo</a>
-            <div style="margin-top: 12pt; font-size: 9pt;">sales@quikwit.chat | quikwit.chat/fitness-centre-chatbot</div>
+            <div style="margin-top: 10pt; font-size: 9pt;">sales@quikwit.chat | quikwit.chat/fitness-centre-chatbot</div>
         </div>
     </div>
 
     <div class="page">
-        <h2>Maximize Member Growth</h2>
-        <p style="font-size: 12pt; margin-bottom: 20pt;">Empower your team by automating the repetitive questions that take them away from your members.</p>
-
-        <div style="flex-grow: 1;">
-            <div style="margin-bottom: 20pt;">
-                <h3 style="color: var(--quikwit-purple); margin-bottom: 5pt; font-size: 14pt;">✓ Zero Lead Leakage</h3>
-                <p style="margin: 0; font-size: 11pt;">Respond to membership and pricing questions within seconds, even at 2 AM. Capture leads instantly without friction or forms.</p>
-            </div>
-
-            <div style="margin-bottom: 20pt;">
-                <h3 style="color: var(--quikwit-purple); margin-bottom: 5pt; font-size: 14pt;">✓ Multi-Channel Integration</h3>
-                <p style="margin: 0; font-size: 11pt;">One simple setup covers your Website, WhatsApp, Telegram, and Instagram. Your AI agent speaks over 40 languages fluently.</p>
-            </div>
-
-            <div style="margin-bottom: 20pt;">
-                <h3 style="color: var(--quikwit-purple); margin-bottom: 5pt; font-size: 14pt;">✓ Seamless Handoff</h3>
-                <p style="margin: 0; font-size: 11pt;">Quikwit collects prospect details and booking requests, passing them to your staff to confirm and close the sale.</p>
-            </div>
-
-            <div style="background: var(--light-bg); padding: 15pt; border-radius: 12pt; border: 1pt solid #eee; margin-top: 10pt;">
-                <p style="margin: 0; font-weight: 800; color: var(--navy-blue); font-size: 12pt;">Instant Adaptation</p>
-                <p style="margin-top: 5pt; font-size: 10.5pt;">Update your class schedules or membership tiers and the AI adapts immediately. No technical skills or coding required.</p>
-            </div>
+        <div class="header">
+            <div class="logo">Quikwit AI</div>
         </div>
 
+        <h2>Scale Your Business, Not Your Workload</h2>
+        <p style="font-size: 11pt; margin-bottom: 25pt;">Quikwit acts as a native extension of your facility, ensuring your digital presence is as professional as your physical gym.</p>
+
+        <div style="margin-bottom: 20pt;">
+            <h3 style="color: var(--quikwit-purple); margin-bottom: 6pt; font-size: 14pt;">✓ Professional Lead Management</h3>
+            <p style="margin: 0; font-size: 11pt;">When someone is ready to join, Quikwit collects their details automatically without tedious forms. No more manual entry—just hot leads delivered to your inbox.</p>
+        </div>
+
+        <div style="margin-bottom: 20pt;">
+            <h3 style="color: var(--quikwit-purple); margin-bottom: 6pt; font-size: 14pt;">✓ Multi-Channel Reach</h3>
+            <p style="margin: 0; font-size: 11pt;">A single setup covers your Website, WhatsApp, Telegram, and Instagram. The AI automatically detects and responds in the customer's preferred language.</p>
+        </div>
+
+        <div style="margin-bottom: 20pt;">
+            <h3 style="color: var(--quikwit-purple); margin-bottom: 6pt; font-size: 14pt;">✓ Real-Time Training Content</h3>
+            <p style="margin: 0; font-size: 11pt;">Update your class schedules or trainer list and your AI front desk adapts immediately—no technical skills or re-coding required.</p>
+        </div>
+
+        <div style="background: var(--light-bg); padding: 18pt; border-radius: 12pt; border: 1pt solid #eee; margin-top: 10pt;">
+            <p style="margin: 0; font-weight: 800; color: var(--navy-blue); font-size: 12pt;">Zero Risk Setup</p>
+            <p style="margin-top: 6pt; font-size: 11pt; color: var(--grey-text);">Most gyms are fully operational in under 10 minutes. We offer free setup assistance to ensure your bot is perfect from day one.</p>
+        </div>
+
+        <div style="margin-top: auto;"></div>
+
         <div class="cta-section">
-            <div class="cta-title">Get Started Today</div>
-            <div style="font-size: 10pt; margin-bottom: 10pt;">Serving fitness businesses in Australia, New Zealand, and globally.</div>
+            <div class="cta-title">Get in Touch to See Quikwit in Action</div>
+            <div style="font-size: 10pt; margin-bottom: 8pt; opacity: 0.9;">Serving fitness businesses in Australia, New Zealand, and globally.</div>
             <div style="font-weight: 800; font-size: 20pt;">quikwit.chat</div>
         </div>
     </div>
