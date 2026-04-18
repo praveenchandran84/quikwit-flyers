@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quikwit Proposal | Magwheel Repair + Eastern Vehicle Service</title>
+  <style>
+    :root {
+      --brand: #2563eb;
+      --brand-dark: #1d4ed8;
+      --brand-soft: #dbeafe;
+      --ink: #0f172a;
+      --muted: #475569;
+      --line: #e2e8f0;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --success: #0f766e;
+      --success-soft: #ccfbf1;
+      --shadow: 0 20px 45px rgba(15, 23, 42, 0.08);
+      --radius: 22px;
+      --radius-sm: 16px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top right, rgba(37, 99, 235, 0.12), transparent 22%),
+        linear-gradient(180deg, #ffffff 0%, #f8fafc 50%, #eef4ff 100%);
+      line-height: 1.6;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 44px 0;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid rgba(37, 99, 235, 0.15);
+      border-radius: 999px;
+      color: var(--brand-dark);
+      font-size: 16px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      backdrop-filter: blur(10px);
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      box-shadow: 0 0 0 6px rgba(37, 99, 235, 0.12);
+    }
+
+    .hero {
+      padding: 28px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 0 30px;
+    }
+
+    .brandline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-dark) 100%);
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 18px;
+      box-shadow: 0 10px 25px rgba(37, 99, 235, .28);
+    }
+
+    .topnote {
+      font-size: 13px;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.65);
+      border-radius: 32px;
+      box-shadow: var(--shadow);
+      padding: 42px;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card::after {
+      content: "";
+      position: absolute;
+      inset: auto -90px -90px auto;
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(37, 99, 235, 0.16) 0%, rgba(37, 99, 235, 0.02) 62%, transparent 70%);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .8fr;
+      gap: 28px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1, h2, h3, h4 { margin: 0; line-height: 1.15; }
+
+    h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      letter-spacing: -0.04em;
+      margin: 16px 0 14px;
+    }
+
+    .hero p.lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 720px;
+    }
+
+    .hero-points {
+      display: grid;
+      gap: 12px;
+      margin-top: 26px;
+    }
+
+    .hero-points div {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .hero-points span.icon,
+    .check {
+      flex: 0 0 auto;
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      display: inline-grid;
+      place-items: center;
+      font-size: 14px;
+      font-weight: 900;
+      margin-top: 1px;
+    }
+
+    .stats {
+      display: grid;
+      gap: 14px;
+    }
+
+    .stat-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 20px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.04);
+    }
+
+    .stat-label {
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--brand-dark);
+      margin-bottom: 8px;
+    }
+
+    .stat-value {
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 6px;
+    }
+
+    .stat-copy {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .section-head {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+
+    .section-head h2 {
+      font-size: clamp(26px, 3vw, 40px);
+      letter-spacing: -0.03em;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 880px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .grid-2, .grid-3, .grid-4 {
+      display: grid;
+      gap: 20px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .grid-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .card h3 {
+      font-size: 21px;
+      margin-bottom: 10px;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .icon-box {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--brand-soft), #eff6ff);
+      color: var(--brand-dark);
+      font-weight: 900;
+      margin-bottom: 16px;
+      font-size: 18px;
+    }
+
+    .opportunity-list,
+    .bullet-list,
+    .feature-list,
+    .price-features,
+    .small-notes {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .opportunity-list li,
+    .bullet-list li,
+    .feature-list li,
+    .price-features li,
+    .small-notes li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      color: var(--ink);
+    }
+
+    .muted-box {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .bundle {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .bundle-panel {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 72%);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      border-radius: 24px;
+      padding: 28px;
+    }
+
+    .bundle-panel h3 {
+      font-size: 26px;
+      margin-bottom: 12px;
+      letter-spacing: -0.03em;
+    }
+
+    .bundle-panel p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .bundle-tiles {
+      display: grid;
+      gap: 14px;
+    }
+
+    .bundle-tile {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      background: #fff;
+    }
+
+    .bundle-tile strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 15px;
+    }
+
+    .bundle-tile span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .flow-shell {
+      display: grid;
+      gap: 22px;
+    }
+
+    .shared-flow {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 70%);
+      border: 1px solid rgba(37, 99, 235, 0.18);
+      border-radius: 28px;
+      padding: 28px;
+    }
+
+    .flow-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .flow-step {
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(37, 99, 235, 0.12);
+      border-radius: 20px;
+      padding: 18px;
+    }
+
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .flow-step h4,
+    .workflow-card h4,
+    .timeline-card h4,
+    .price-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
+    .flow-step p,
+    .workflow-card p,
+    .timeline-card p,
+    .price-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .branch-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      align-items: start;
+    }
+
+    .branch {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.05);
+    }
+
+    .branch-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .branch-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--brand-soft);
+      color: var(--brand-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .workflow-stack {
+      display: grid;
+      gap: 14px;
+    }
+
+    .workflow-card {
+      background: linear-gradient(180deg, #ffffff 0%, #fafcff 100%);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: 18px;
+      position: relative;
+    }
+
+    .workflow-tag {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      background: #eff6ff;
+      border-radius: 999px;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+    }
+
+    .highlight {
+      background: linear-gradient(135deg, #eff6ff 0%, #ffffff 78%);
+      border: 1px solid rgba(37, 99, 235, 0.14);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 16px 32px rgba(15, 23, 42, 0.06);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .price-card.featured {
+      border: 1px solid rgba(37, 99, 235, 0.35);
+      box-shadow: 0 20px 38px rgba(37, 99, 235, 0.12);
+    }
+
+    .price-card.featured::before {
+      content: "Recommended for higher volume";
+      position: absolute;
+      top: 20px;
+      right: -44px;
+      background: var(--brand);
+      color: white;
+      padding: 8px 48px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      transform: rotate(35deg);
+    }
+
+    .plan-name {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: var(--brand-dark);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .price {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .price .amount {
+      font-size: clamp(34px, 4vw, 52px);
+      line-height: .95;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+    }
+
+    .price .term {
+      font-size: 16px;
+      color: var(--muted);
+      padding-bottom: 6px;
+    }
+
+    .annual {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+
+    .fit-box {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border-radius: 18px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+    }
+
+    .fit-box strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 14px;
+    }
+
+    .fit-box span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .notes-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 22px;
+    }
+
+    .fee-card {
+      background: linear-gradient(135deg, var(--success-soft), #ffffff 80%);
+      border: 1px solid rgba(15, 118, 110, 0.18);
+      border-radius: 24px;
+      padding: 24px;
+    }
+
+    .fee-card .mini {
+      font-size: 12px;
+      color: var(--success);
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .fee-card .big {
+      font-size: 34px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      margin-bottom: 8px;
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .timeline-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, var(--brand), var(--brand-dark));
+    }
+
+    .timeline-step {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--brand-dark);
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      margin-bottom: 10px;
+    }
+
+    .cta {
+      padding: 12px 0 64px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, var(--brand-dark) 0%, var(--brand) 100%);
+      color: white;
+      border-radius: 30px;
+      padding: 34px;
+      box-shadow: 0 22px 50px rgba(37, 99, 235, 0.24);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-box::after {
+      content: "";
+      position: absolute;
+      inset: auto -80px -80px auto;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.02) 60%, transparent 70%);
+    }
+
+    .cta-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 24px;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 3vw, 42px);
+      letter-spacing: -0.03em;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      margin: 0;
+      color: rgba(255,255,255,0.85);
+      font-size: 16px;
+      max-width: 700px;
+    }
+
+    .cta-points {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .cta-points div {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-weight: 600;
+    }
+
+    .cta .check {
+      background: rgba(255,255,255,0.18);
+      color: white;
+    }
+
+    .cta-panel {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 22px;
+      padding: 22px;
+      backdrop-filter: blur(8px);
+    }
+
+    .cta-panel strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .cta-panel span {
+      color: rgba(255,255,255,0.84);
+      font-size: 14px;
+      display: block;
+      margin-bottom: 14px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: white;
+      color: var(--brand-dark);
+      font-weight: 800;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-size: 14px;
+    }
+
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      padding-top: 18px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .bundle,
+      .notes-grid,
+      .cta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 860px) {
+      .flow-row,
+      .branch-grid,
+      .pricing-grid,
+      .timeline,
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-card,
+      .shared-flow,
+      .branch,
+      .price-card,
+      .cta-box {
+        padding: 24px;
+      }
+
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .topnote { text-align: left; }
+
+      .price-card.featured::before {
+        position: static;
+        transform: none;
+        display: inline-block;
+        border-radius: 999px;
+        padding: 8px 12px;
+        margin-bottom: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="wrap">
+      <div class="topbar">
+        <div class="brandline">
+          <div class="logo">Q</div>
+          <div>
+            <div style="font-size: 15px; color: var(--muted); font-weight: 700; margin-bottom: 2px;">Proposal prepared by</div>
+            <div style="font-size: 20px; letter-spacing: -0.02em;">Quikwit</div>
+          </div>
+        </div>
+        <div class="topnote">
+          Prepared for <strong>Magwheel Repair</strong> and <strong>Eastern Vehicle Service</strong><br />
+          Auckland, New Zealand
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Unified AI front desk for two automotive businesses</div>
+            <h1>Voice AI receptionist, chatbot, and appointment workflow for <br />Magwheel Repair + Eastern Vehicle Service</h1>
+            <p class="lead">A bundled Quikwit solution designed to handle inbound calls, qualify enquiries, support multilingual conversations, collect quote requirements, automate follow-up, and help convert more enquiries into booked work across both businesses.</p>
+
+            <div class="hero-points">
+              <div><span class="icon">✓</span><span>AI receptionist trained using Nitin Malik’s voice</span></div>
+              <div><span class="icon">✓</span><span>English and Chinese support from day one, with more languages available if required</span></div>
+              <div><span class="icon">✓</span><span>One shared intake layer across calls, website, WhatsApp, and Instagram</span></div>
+            </div>
+          </div>
+
+          <div class="stats">
+            <div class="stat-card">
+              <div class="stat-label">Core outcome</div>
+              <div class="stat-value">Faster response</div>
+              <div class="stat-copy">Reduce missed opportunities by ensuring customer enquiries are answered and progressed without waiting for manual intervention.</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Customer journey</div>
+              <div class="stat-value">Smarter booking + quoting</div>
+              <div class="stat-copy">Route customers to the right business, collect the right details, and only involve the business owner when human judgment is needed.</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Operating model</div>
+              <div class="stat-value">One bundle</div>
+              <div class="stat-copy">A single commercial package covering both Magwheel Repair and Eastern Vehicle Service together.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Why this matters</div>
+        <h2>The opportunity</h2>
+        <p>This solution is designed around the day-to-day realities of running two service businesses where customer calls, quote requests, appointment needs, and follow-up all compete for attention.</p>
+      </div>
+
+      <div class="muted-box">
+        <ul class="opportunity-list">
+          <li><span class="check">✓</span><span>Inbound calls may be missed or answered late during busy workshop hours.</span></li>
+          <li><span class="check">✓</span><span>Customers may need assistance in different languages before they are comfortable proceeding.</span></li>
+          <li><span class="check">✓</span><span>Quote collection is manual and may require back-and-forth across calls, WhatsApp, photos, and email.</span></li>
+          <li><span class="check">✓</span><span>Magwheel Repair and Eastern Vehicle Service require different enquiry logic, but customers should still experience one smooth front-desk journey.</span></li>
+          <li><span class="check">✓</span><span>After a quote is sent, follow-up and conversion into a booking can easily become another manual task.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Proposed solution</div>
+        <h2>What Quikwit will deliver</h2>
+        <p>A single solution layer across voice, chat, booking, and customer follow-up — tailored to support two brands under one owner.</p>
+      </div>
+
+      <div class="grid-4">
+        <div class="card">
+          <div class="icon-box">☎</div>
+          <h3>Voice AI Receptionist</h3>
+          <p>Inbound calls are handled by a Quikwit voice AI receptionist trained using the voice of Nitin Malik. The receptionist can engage callers in English and Chinese, with more languages supported if required.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">💬</div>
+          <h3>AI Chatbot Across Channels</h3>
+          <p>Quikwit chatbot support across both business websites, WhatsApp, and Instagram to continue conversations, clarify queries, and push bookings forward.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">📅</div>
+          <h3>Appointment Management</h3>
+          <p>A centralized appointment booking and management layer connected to both the AI receptionist and chatbot for a consistent booking experience.</p>
+        </div>
+
+        <div class="card">
+          <div class="icon-box">🧾</div>
+          <h3>Quotation &amp; Invoicing <span style="color: var(--brand-dark);">[Optional]</span></h3>
+          <p>An optional workflow to generate quotations, invoices, and receipts, while keeping the owner in control where final review or pricing approval is needed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="bundle">
+        <div class="bundle-panel">
+          <div class="eyebrow">Why this setup fits</div>
+          <h3>One owner. Two businesses. One intelligent customer intake system.</h3>
+          <p>Rather than creating two disconnected systems, Quikwit can act as a shared front desk that first understands who the customer is trying to reach, then runs the right workflow for that business. This creates a smoother experience for customers while reducing manual handling overhead behind the scenes.</p>
+        </div>
+        <div class="bundle-tiles">
+          <div class="bundle-tile">
+            <strong>Shared phone number handling</strong>
+            <span>Customers call one number and are guided to the correct business journey.</span>
+          </div>
+          <div class="bundle-tile">
+            <strong>Business-specific workflows</strong>
+            <span>Magwheel and Eastern each get their own quote and booking logic.</span>
+          </div>
+          <div class="bundle-tile">
+            <strong>Human-in-the-loop where needed</strong>
+            <span>Nitin only steps in when a quote or decision requires human judgment.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Workflow design</div>
+        <h2>How the workflow will operate</h2>
+        <p>The proposal below combines a shared call intake flow with separate downstream workflows for Magwheel Repair and Eastern Vehicle Service.</p>
+      </div>
+
+      <div class="flow-shell">
+        <div class="shared-flow">
+          <h3 style="font-size: 26px; letter-spacing: -0.03em;">Shared intake flow</h3>
+          <div class="flow-row">
+            <div class="flow-step">
+              <div class="step-num">1</div>
+              <h4>Customer calls common number</h4>
+              <p>The client calls a common phone number serving both Magwheel Repair and Eastern Vehicle Service.</p>
+            </div>
+            <div class="flow-step">
+              <div class="step-num">2</div>
+              <h4>Call forwards to Quikwit</h4>
+              <p>The call is forwarded to Quikwit’s voice AI receptionist without any perceptible delay for the caller.</p>
+            </div>
+            <div class="flow-step">
+              <div class="step-num">3</div>
+              <h4>Language + business intent detected</h4>
+              <p>The receptionist establishes the caller’s preferred language and whether the customer needs Magwheel Repair or Eastern Vehicle Service.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="branch-grid">
+          <div class="branch">
+            <div class="branch-header">
+              <div>
+                <div class="branch-badge">Magwheel Repair workflow</div>
+                <h3 style="margin-top: 10px; font-size: 28px; letter-spacing: -0.03em;">Quote-first or booking-first handling for wheel repair enquiries</h3>
+              </div>
+            </div>
+
+            <div class="workflow-stack">
+              <div class="workflow-card">
+                <div class="step-num">4.1</div>
+                <h4>AI receptionist understands the issue</h4>
+                <p>The receptionist assesses the wheel-related issue and determines whether the caller can be moved directly into appointment booking or whether a quote must be prepared first.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">4.1A</div>
+                <h4>If booking can be done immediately</h4>
+                <p>The AI receptionist presents available appointment slots, books the appointment, and sends the customer a confirmation via WhatsApp.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">4.1B</div>
+                <h4>If a quote is required first</h4>
+                <p>The receptionist gathers as much information as possible about the wheel repair need. If photos are required for an accurate quote, the call ends after informing the customer that they will receive a WhatsApp message from Magwheel that they can reply to with wheel photographs. Photos can also be sent by email if needed.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">4.2</div>
+                <h4>Business owner is alerted</h4>
+                <p>Once the customer sends photographs via WhatsApp or email, Nitin is alerted that a customer is waiting for a quotation. He can then review the case and close the loop by providing the quote.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">4.3</div>
+                <h4>Quikwit follows up after quote sharing</h4>
+                <p>Once a quotation has been provided, Quikwit chatbot continues the conversation, clarifies customer queries, and follows up until an appointment is booked or the customer chooses not to proceed.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">4.4</div>
+                <h4>Reminder and post-service messaging</h4>
+                <p>Quikwit chatbot sends appointment reminders and can share the invoice or receipt via WhatsApp after service completion.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="branch">
+            <div class="branch-header">
+              <div>
+                <div class="branch-badge">Eastern Vehicle Service workflow</div>
+                <h3 style="margin-top: 10px; font-size: 28px; letter-spacing: -0.03em;">Service booking and quote capture for workshop enquiries</h3>
+              </div>
+            </div>
+
+            <div class="workflow-stack">
+              <div class="workflow-card">
+                <div class="step-num">5.1</div>
+                <h4>AI receptionist understands service need</h4>
+                <p>The receptionist identifies the type of service needed and determines whether it can directly proceed into appointment booking or whether a quotation should be generated first.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">5.1A</div>
+                <h4>If booking can be done immediately</h4>
+                <p>The AI receptionist presents available slots and books the appointment accordingly.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">5.1B</div>
+                <h4>If a quote is required first</h4>
+                <p>The AI receptionist gathers the required details to support quote preparation, such as the car make and model, kilometres driven, last service timing, and any other relevant information based on the requested service. The call ends after informing the customer that they will receive a quote via WhatsApp.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">5.2</div>
+                <h4>Business owner is alerted</h4>
+                <p>Nitin is alerted that a customer is waiting for a quotation, along with a link to view the captured service details. He can then review and provide the quote.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">5.3</div>
+                <h4>Quikwit follows up after quote sharing</h4>
+                <p>Once a quotation has been provided, Quikwit chatbot continues the conversation, addresses queries, and follows up until an appointment is booked or the customer chooses not to continue.</p>
+              </div>
+
+              <div class="workflow-card">
+                <div class="step-num">5.4</div>
+                <h4>Reminder and post-service messaging</h4>
+                <p>Quikwit chatbot sends appointment reminders and can share the invoice or receipt via WhatsApp after service completion.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Business benefits</div>
+        <h2>What this improves operationally</h2>
+        <p>The value of this setup is not only answering more calls — it is creating a smoother operating layer from first contact through booking and completion.</p>
+      </div>
+
+      <div class="grid-3">
+        <div class="highlight">
+          <h3 style="margin-bottom: 12px;">Front desk availability</h3>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Ensure customers get a response even during busy workshop hours.</span></li>
+            <li><span class="check">✓</span><span>Reduce dependence on manual first-touch call handling.</span></li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <h3 style="margin-bottom: 12px;">Better lead handling</h3>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Collect the right information before involving the business owner.</span></li>
+            <li><span class="check">✓</span><span>Convert more quote enquiries into scheduled work through automated follow-up.</span></li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <h3 style="margin-bottom: 12px;">Customer experience</h3>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Support English and Chinese conversations from the first interaction.</span></li>
+            <li><span class="check">✓</span><span>Provide confirmations, reminders, and post-service communication via WhatsApp.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Commercials</div>
+        <h2>Bundle pricing for both businesses</h2>
+        <p>The following pricing applies to Magwheel Repair and Eastern Vehicle Service together as one bundled Quikwit deployment.</p>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <div class="plan-name">Option 1</div>
+          <div class="price">
+            <div class="amount">USD 129</div>
+            <div class="term">/ month</div>
+          </div>
+          <div class="annual">or <strong>USD 1,299 / year</strong></div>
+          <ul class="price-features">
+            <li><span class="check">✓</span><span><strong>500 minutes</strong> of voice AI receptionist calls per month</span></li>
+            <li><span class="check">✓</span><span>Usage beyond 500 minutes charged at <strong>USD 0.15 per minute</strong></span></li>
+            <li><span class="check">✓</span><span><strong>5,000 chat messages</strong> via Quikwit chatbot per month</span></li>
+            <li><span class="check">✓</span><span>Usage beyond 5,000 messages charged at <strong>USD 1 per 100 messages</strong></span></li>
+            <li><span class="check">✓</span><span>Appointment booking &amp; management included on a complimentary basis</span></li>
+            <li><span class="check">✓</span><span>Quotation / invoicing module included on a complimentary basis</span></li>
+          </ul>
+          <div class="fit-box">
+            <strong>Expected fit</strong>
+            <span>This option should suffice for roughly <strong>180–250 voice conversations</strong> and <strong>250–300 chat conversations</strong> per month.</span>
+          </div>
+        </div>
+
+        <div class="price-card featured">
+          <div class="plan-name">Option 2</div>
+          <div class="price">
+            <div class="amount">USD 199</div>
+            <div class="term">/ month</div>
+          </div>
+          <div class="annual">or <strong>USD 1,999 / year</strong></div>
+          <ul class="price-features">
+            <li><span class="check">✓</span><span><strong>900 minutes</strong> of voice AI receptionist calls per month</span></li>
+            <li><span class="check">✓</span><span>Usage beyond 900 minutes charged at <strong>USD 0.12 per minute</strong></span></li>
+            <li><span class="check">✓</span><span><strong>10,000 chat messages</strong> via Quikwit chatbot per month</span></li>
+            <li><span class="check">✓</span><span>Usage beyond 10,000 messages charged at <strong>USD 1 per 100 messages</strong></span></li>
+            <li><span class="check">✓</span><span>Appointment booking &amp; management included on a complimentary basis</span></li>
+            <li><span class="check">✓</span><span>Quotation / invoicing module included on a complimentary basis</span></li>
+          </ul>
+          <div class="fit-box">
+            <strong>Expected fit</strong>
+            <span>This option should suffice for roughly <strong>300–400 voice conversations</strong> and <strong>500–600 chat conversations</strong> per month.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="notes-grid" style="margin-top: 22px;">
+        <div class="card">
+          <h3 style="margin-bottom: 14px;">Commercial notes</h3>
+          <ul class="small-notes">
+            <li><span class="check">✓</span><span>WhatsApp messages that are part of the voice AI receptionist workflow are <strong>not included</strong> in the AI chatbot messaging quota.</span></li>
+            <li><span class="check">✓</span><span>Quikwit will work with Magwheel Repair and Eastern Vehicle Service on a continuous basis to improve and refine these tools for smooth day-to-day operations.</span></li>
+            <li><span class="check">✓</span><span>The appointment booking / management and quotation / invoicing modules are included as complimentary additions within the bundle.</span></li>
+          </ul>
+        </div>
+
+        <div class="fee-card">
+          <div class="mini">One-time setup item</div>
+          <div class="big">USD 50</div>
+          <p style="margin: 0; color: var(--muted);">One-time fee for procuring a phone number for the voice assistant call forwarding setup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">Rollout plan</div>
+        <h2>Target timelines</h2>
+        <p>The recommended rollout model is a controlled free trial first, followed by paid usage once the setup has been validated in live operation.</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-card">
+          <div class="timeline-step">May · Week 1</div>
+          <h4>Deploy 2-week free trial</h4>
+          <p>Quikwit deploys the bundled solution for Magwheel Repair and Eastern Vehicle Service, allowing the setup to be tested in a live operating environment.</p>
+        </div>
+        <div class="timeline-card">
+          <div class="timeline-step">May · Week 3</div>
+          <h4>Start paid usage after successful trial</h4>
+          <p>If the trial performs as expected, paid usage begins in the third week of May. If any fixes or improvements are identified during the trial, paid usage begins once those items are completed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <div class="cta-box">
+        <div class="cta-grid">
+          <div>
+            <h2>A practical AI operating layer for both businesses</h2>
+            <p>This proposal is designed to make customer handling more responsive, more scalable, and less manual across both Magwheel Repair and Eastern Vehicle Service — while keeping Nitin in control wherever his judgment is needed most.</p>
+            <div class="cta-points">
+              <div><span class="check">✓</span><span>Shared call handling with business-specific workflows</span></div>
+              <div><span class="check">✓</span><span>Booking, quoting, reminders, and follow-up in one solution</span></div>
+              <div><span class="check">✓</span><span>Free trial first, then scale into paid usage</span></div>
+            </div>
+          </div>
+          <div class="cta-panel">
+            <strong>Recommended next step</strong>
+            <span>Confirm trial rollout scope and finalize the preferred pricing option for the bundled deployment.</span>
+            <span class="cta-button">Let's Discuss Next Steps!</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-note">Prepared by Quikwit · AI chat and voice solutions for small businesses</div>
+    </div>
+  </section>
+</body>
+</html>
