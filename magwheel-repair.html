@@ -384,8 +384,9 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 34px;
+      min-width: 34px;
       height: 34px;
+      padding: 0 10px;
       border-radius: 999px;
       background: var(--brand);
       color: #fff;
@@ -462,17 +463,6 @@
       border-radius: 18px;
       padding: 18px;
       position: relative;
-    }
-
-    .workflow-tag {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 800;
-      color: var(--brand-dark);
-      background: #eff6ff;
-      border-radius: 999px;
-      padding: 6px 10px;
-      margin-bottom: 10px;
     }
 
     .highlight {
@@ -727,7 +717,7 @@
     .cta-button {
       display: inline-block;
       background: #746EEF;
-      color: var(--brand-dark);
+      color: #fff;
       font-weight: 800;
       border-radius: 999px;
       padding: 12px 18px;
@@ -741,6 +731,9 @@
       font-size: 13px;
       padding-top: 18px;
     }
+
+    .page {}
+    .page-inner {}
 
     @media (max-width: 1080px) {
       .hero-grid,
@@ -788,402 +781,497 @@
         margin-bottom: 14px;
       }
     }
+
+    @page {
+      size: A4 portrait;
+      margin: 16mm;
+    }
+
+    @media print {
+      html, body {
+        background: #fff !important;
+      }
+
+      body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .page {
+        page-break-after: always;
+        break-after: page;
+        min-height: calc(297mm - 32mm);
+        display: block;
+      }
+
+      .page:last-of-type {
+        page-break-after: auto;
+        break-after: auto;
+      }
+
+      .page-inner {
+        padding: 0;
+      }
+
+      .hero,
+      .section,
+      .cta {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+
+      .hero-card,
+      .card,
+      .muted-box,
+      .bundle-panel,
+      .bundle-tile,
+      .shared-flow,
+      .branch,
+      .workflow-card,
+      .highlight,
+      .price-card,
+      .fee-card,
+      .timeline-card,
+      .cta-box {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .topbar {
+        padding-top: 0 !important;
+      }
+
+      .footer-note {
+        padding-top: 10px;
+      }
+
+      .cta {
+        display: none !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <div class="wrap">
-      <div class="topbar">
-        <div class="brandline">
-          <div class="logo">Q</div>
-          <div>
-            <div style="font-size: 15px; color: var(--muted); font-weight: 700; margin-bottom: 2px;">Proposal prepared by</div>
-            <div style="font-size: 20px; letter-spacing: -0.02em;">Quikwit</div>
-          </div>
-        </div>
-        <div class="topnote">
-          Prepared for <strong>Magwheel Repair</strong> and <strong>Eastern Vehicle Service</strong><br />
-          Auckland, New Zealand
-        </div>
-      </div>
 
-      <div class="hero-card">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow">Unified AI front desk for two automotive businesses</div>
-            <h1>Voice AI receptionist, chatbot, and appointment workflow for <br />Magwheel Repair + Eastern Vehicle Service</h1>
-            <p class="lead">A bundled Quikwit solution designed to handle inbound calls, qualify enquiries, support multilingual conversations, collect quote requirements, automate follow-up, and help convert more enquiries into booked work across both businesses.</p>
-
-            <div class="hero-points">
-              <div><span class="icon">✓</span><span>AI receptionist trained using Nitin Malik’s voice</span></div>
-              <div><span class="icon">✓</span><span>English and Chinese support from day one, with more languages available if required</span></div>
-              <div><span class="icon">✓</span><span>One shared intake layer across calls, website, WhatsApp, and Instagram</span></div>
+  <!-- PAGE 1 -->
+  <div class="page">
+    <div class="page-inner">
+      <div class="hero">
+        <div class="wrap">
+          <div class="topbar">
+            <div class="brandline">
+              <div class="logo">Q</div>
+              <div>
+                <div style="font-size: 15px; color: var(--muted); font-weight: 700; margin-bottom: 2px;">Proposal prepared by</div>
+                <div style="font-size: 20px; letter-spacing: -0.02em;">Quikwit</div>
+              </div>
+            </div>
+            <div class="topnote">
+              Prepared for <strong>Magwheel Repair</strong> and <strong>Eastern Vehicle Service</strong><br />
+              Auckland, New Zealand
             </div>
           </div>
 
-          <div class="stats">
-            <div class="stat-card">
-              <div class="stat-label">Core outcome</div>
-              <div class="stat-value">Faster response</div>
-              <div class="stat-copy">Reduce missed opportunities by ensuring customer enquiries are answered and progressed without waiting for manual intervention.</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">Customer journey</div>
-              <div class="stat-value">Smarter booking + quoting</div>
-              <div class="stat-copy">Route customers to the right business, collect the right details, and only involve the business owner when human judgment is needed.</div>
-            </div>
-            <div class="stat-card">
-              <div class="stat-label">Operating model</div>
-              <div class="stat-value">One bundle</div>
-              <div class="stat-copy">A single commercial package covering both Magwheel Repair and Eastern Vehicle Service together.</div>
+          <div class="hero-card">
+            <div class="hero-grid">
+              <div>
+                <div class="eyebrow">Unified AI front desk for two automotive businesses</div>
+                <h1>Voice AI receptionist, chatbot, and appointment workflow for <br />Magwheel Repair + Eastern Vehicle Service</h1>
+                <p class="lead">A bundled Quikwit solution designed to handle inbound calls, qualify enquiries, support multilingual conversations, collect quote requirements, automate follow-up, and help convert more enquiries into booked work across both businesses.</p>
+
+                <div class="hero-points">
+                  <div><span class="icon">✓</span><span>AI receptionist trained using Nitin Malik’s voice</span></div>
+                  <div><span class="icon">✓</span><span>English and Chinese support from day one, with more languages available if required</span></div>
+                  <div><span class="icon">✓</span><span>One shared intake layer across calls, website, WhatsApp, and Instagram</span></div>
+                </div>
+              </div>
+
+              <div class="stats">
+                <div class="stat-card">
+                  <div class="stat-label">Core outcome</div>
+                  <div class="stat-value">Faster response</div>
+                  <div class="stat-copy">Reduce missed opportunities by ensuring customer enquiries are answered and progressed without waiting for manual intervention.</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Customer journey</div>
+                  <div class="stat-value">Smarter booking + quoting</div>
+                  <div class="stat-copy">Route customers to the right business, collect the right details, and only involve the business owner when human judgment is needed.</div>
+                </div>
+                <div class="stat-card">
+                  <div class="stat-label">Operating model</div>
+                  <div class="stat-value">One bundle</div>
+                  <div class="stat-copy">A single commercial package covering both Magwheel Repair and Eastern Vehicle Service together.</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </div><!-- /.hero -->
+
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Why this matters</div>
+            <h2>The opportunity</h2>
+            <p>This solution is designed around the day-to-day realities of running two service businesses where customer calls, quote requests, appointment needs, and follow-up all compete for attention.</p>
+          </div>
+
+          <div class="muted-box">
+            <ul class="opportunity-list">
+              <li><span class="check">✓</span><span>Inbound calls may be missed or answered late during busy workshop hours.</span></li>
+              <li><span class="check">✓</span><span>Customers may need assistance in different languages before they are comfortable proceeding.</span></li>
+              <li><span class="check">✓</span><span>Quote collection is manual and may require back-and-forth across calls, WhatsApp, photos, and email.</span></li>
+              <li><span class="check">✓</span><span>Magwheel Repair and Eastern Vehicle Service require different enquiry logic, but customers should still experience one smooth front-desk journey.</span></li>
+              <li><span class="check">✓</span><span>After a quote is sent, follow-up and conversion into a booking can easily become another manual task.</span></li>
+            </ul>
+          </div>
+        </div>
+      </section>
     </div>
   </div>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Why this matters</div>
-        <h2>The opportunity</h2>
-        <p>This solution is designed around the day-to-day realities of running two service businesses where customer calls, quote requests, appointment needs, and follow-up all compete for attention.</p>
-      </div>
-
-      <div class="muted-box">
-        <ul class="opportunity-list">
-          <li><span class="check">✓</span><span>Inbound calls may be missed or answered late during busy workshop hours.</span></li>
-          <li><span class="check">✓</span><span>Customers may need assistance in different languages before they are comfortable proceeding.</span></li>
-          <li><span class="check">✓</span><span>Quote collection is manual and may require back-and-forth across calls, WhatsApp, photos, and email.</span></li>
-          <li><span class="check">✓</span><span>Magwheel Repair and Eastern Vehicle Service require different enquiry logic, but customers should still experience one smooth front-desk journey.</span></li>
-          <li><span class="check">✓</span><span>After a quote is sent, follow-up and conversion into a booking can easily become another manual task.</span></li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Proposed solution</div>
-        <h2>What Quikwit will deliver</h2>
-        <p>A single solution layer across voice, chat, booking, and customer follow-up — tailored to support two brands under one owner.</p>
-      </div>
-
-      <div class="grid-4">
-        <div class="card">
-          <div class="icon-box">☎</div>
-          <h3>Voice AI Receptionist</h3>
-          <p>Inbound calls are handled by a Quikwit voice AI receptionist trained using the voice of Nitin Malik. The receptionist can engage callers in English and Chinese, with more languages supported if required.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon-box">💬</div>
-          <h3>AI Chatbot Across Channels</h3>
-          <p>Quikwit chatbot support across both business websites, WhatsApp, and Instagram to continue conversations, clarify queries, and push bookings forward.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon-box">📅</div>
-          <h3>Appointment Management</h3>
-          <p>A centralized appointment booking and management layer connected to both the AI receptionist and chatbot for a consistent booking experience.</p>
-        </div>
-
-        <div class="card">
-          <div class="icon-box">🧾</div>
-          <h3>Quotation &amp; Invoicing <span style="color: var(--brand-dark);">[Optional]</span></h3>
-          <p>An optional workflow to generate quotations, invoices, and receipts, while keeping the owner in control where final review or pricing approval is needed.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="wrap">
-      <div class="bundle">
-        <div class="bundle-panel">
-          <div class="eyebrow">Why this setup fits</div>
-          <h3>One owner. Two businesses. One intelligent customer intake system.</h3>
-          <p>Rather than creating two disconnected systems, Quikwit can act as a shared front desk that first understands who the customer is trying to reach, then runs the right workflow for that business. This creates a smoother experience for customers while reducing manual handling overhead behind the scenes.</p>
-        </div>
-        <div class="bundle-tiles">
-          <div class="bundle-tile">
-            <strong>Shared phone number handling</strong>
-            <span>Customers call one number and are guided to the correct business journey.</span>
+  <!-- PAGE 2 -->
+  <div class="page">
+    <div class="page-inner">
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Proposed solution</div>
+            <h2>What Quikwit will deliver</h2>
+            <p>A single solution layer across voice, chat, booking, and customer follow-up — tailored to support two brands under one owner.</p>
           </div>
-          <div class="bundle-tile">
-            <strong>Business-specific workflows</strong>
-            <span>Magwheel and Eastern each get their own quote and booking logic.</span>
-          </div>
-          <div class="bundle-tile">
-            <strong>Human-in-the-loop where needed</strong>
-            <span>Nitin only steps in when a quote or decision requires human judgment.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Workflow design</div>
-        <h2>How the workflow will operate</h2>
-        <p>The proposal below combines a shared call intake flow with separate downstream workflows for Magwheel Repair and Eastern Vehicle Service.</p>
-      </div>
-
-      <div class="flow-shell">
-        <div class="shared-flow">
-          <h3 style="font-size: 26px; letter-spacing: -0.03em;">Shared intake flow</h3>
-          <div class="flow-row">
-            <div class="flow-step">
-              <div class="step-num">1</div>
-              <h4>Customer calls common number</h4>
-              <p>The client calls a common phone number serving both Magwheel Repair and Eastern Vehicle Service.</p>
+          <div class="grid-4">
+            <div class="card">
+              <div class="icon-box">☎</div>
+              <h3>Voice AI Receptionist</h3>
+              <p>Inbound calls are handled by a Quikwit voice AI receptionist trained using the voice of Nitin Malik. The receptionist can engage callers in English and Chinese, with more languages supported if required.</p>
             </div>
-            <div class="flow-step">
-              <div class="step-num">2</div>
-              <h4>Call forwards to Quikwit</h4>
-              <p>The call is forwarded to Quikwit’s voice AI receptionist without any perceptible delay for the caller.</p>
+
+            <div class="card">
+              <div class="icon-box">💬</div>
+              <h3>AI Chatbot Across Channels</h3>
+              <p>Quikwit chatbot support across both business websites, WhatsApp, and Instagram to continue conversations, clarify queries, and push bookings forward.</p>
             </div>
-            <div class="flow-step">
-              <div class="step-num">3</div>
-              <h4>Language + business intent detected</h4>
-              <p>The receptionist establishes the caller’s preferred language and whether the customer needs Magwheel Repair or Eastern Vehicle Service.</p>
+
+            <div class="card">
+              <div class="icon-box">📅</div>
+              <h3>Appointment Management</h3>
+              <p>A centralized appointment booking and management layer connected to both the AI receptionist and chatbot for a consistent booking experience.</p>
+            </div>
+
+            <div class="card">
+              <div class="icon-box">🧾</div>
+              <h3>Quotation &amp; Invoicing <span style="color: var(--brand-dark);">[Optional]</span></h3>
+              <p>An optional workflow to generate quotations, invoices, and receipts, while keeping the owner in control where final review or pricing approval is needed.</p>
             </div>
           </div>
         </div>
+      </section>
 
-        <div class="branch-grid">
-          <div class="branch">
-            <div class="branch-header">
-              <div>
-                <div class="branch-badge">Magwheel Repair workflow</div>
-                <h3 style="margin-top: 10px; font-size: 28px; letter-spacing: -0.03em;">Quote-first or booking-first handling for wheel repair enquiries</h3>
-              </div>
+      <section class="section">
+        <div class="wrap">
+          <div class="bundle">
+            <div class="bundle-panel">
+              <div class="eyebrow">Why this setup fits</div>
+              <h3>One owner. Two businesses. One intelligent customer intake system.</h3>
+              <p>Rather than creating two disconnected systems, Quikwit can act as a shared front desk that first understands who the customer is trying to reach, then runs the right workflow for that business. This creates a smoother experience for customers while reducing manual handling overhead behind the scenes.</p>
             </div>
-
-            <div class="workflow-stack">
-              <div class="workflow-card">
-                <div class="step-num">4.1</div>
-                <h4>AI receptionist understands the issue</h4>
-                <p>The receptionist assesses the wheel-related issue and determines whether the caller can be moved directly into appointment booking or whether a quote must be prepared first.</p>
+            <div class="bundle-tiles">
+              <div class="bundle-tile">
+                <strong>Shared phone number handling</strong>
+                <span>Customers call one number and are guided to the correct business journey.</span>
               </div>
-
-              <div class="workflow-card">
-                <div class="step-num">4.1A</div>
-                <h4>If booking can be done immediately</h4>
-                <p>The AI receptionist presents available appointment slots, books the appointment, and sends the customer a confirmation via WhatsApp.</p>
+              <div class="bundle-tile">
+                <strong>Business-specific workflows</strong>
+                <span>Magwheel and Eastern each get their own quote and booking logic.</span>
               </div>
-
-              <div class="workflow-card">
-                <div class="step-num">4.1B</div>
-                <h4>If a quote is required first</h4>
-                <p>The receptionist gathers as much information as possible about the wheel repair need. If photos are required for an accurate quote, the call ends after informing the customer that they will receive a WhatsApp message from Magwheel that they can reply to with wheel photographs. Photos can also be sent by email if needed.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">4.2</div>
-                <h4>Business owner is alerted</h4>
-                <p>Once the customer sends photographs via WhatsApp or email, Nitin is alerted that a customer is waiting for a quotation. He can then review the case and close the loop by providing the quote.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">4.3</div>
-                <h4>Quikwit follows up after quote sharing</h4>
-                <p>Once a quotation has been provided, Quikwit chatbot continues the conversation, clarifies customer queries, and follows up until an appointment is booked or the customer chooses not to proceed.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">4.4</div>
-                <h4>Reminder and post-service messaging</h4>
-                <p>Quikwit chatbot sends appointment reminders and can share the invoice or receipt via WhatsApp after service completion.</p>
-              </div>
-            </div>
-          </div>
-
-          <div class="branch">
-            <div class="branch-header">
-              <div>
-                <div class="branch-badge">Eastern Vehicle Service workflow</div>
-                <h3 style="margin-top: 10px; font-size: 28px; letter-spacing: -0.03em;">Service booking and quote capture for workshop enquiries</h3>
-              </div>
-            </div>
-
-            <div class="workflow-stack">
-              <div class="workflow-card">
-                <div class="step-num">5.1</div>
-                <h4>AI receptionist understands service need</h4>
-                <p>The receptionist identifies the type of service needed and determines whether it can directly proceed into appointment booking or whether a quotation should be generated first.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">5.1A</div>
-                <h4>If booking can be done immediately</h4>
-                <p>The AI receptionist presents available slots and books the appointment accordingly.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">5.1B</div>
-                <h4>If a quote is required first</h4>
-                <p>The AI receptionist gathers the required details to support quote preparation, such as the car make and model, kilometres driven, last service timing, and any other relevant information based on the requested service. The call ends after informing the customer that they will receive a quote via WhatsApp.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">5.2</div>
-                <h4>Business owner is alerted</h4>
-                <p>Nitin is alerted that a customer is waiting for a quotation, along with a link to view the captured service details. He can then review and provide the quote.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">5.3</div>
-                <h4>Quikwit follows up after quote sharing</h4>
-                <p>Once a quotation has been provided, Quikwit chatbot continues the conversation, addresses queries, and follows up until an appointment is booked or the customer chooses not to continue.</p>
-              </div>
-
-              <div class="workflow-card">
-                <div class="step-num">5.4</div>
-                <h4>Reminder and post-service messaging</h4>
-                <p>Quikwit chatbot sends appointment reminders and can share the invoice or receipt via WhatsApp after service completion.</p>
+              <div class="bundle-tile">
+                <strong>Human-in-the-loop where needed</strong>
+                <span>Nitin only steps in when a quote or decision requires human judgment.</span>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Business benefits</div>
-        <h2>What this improves operationally</h2>
-        <p>The value of this setup is not only answering more calls — it is creating a smoother operating layer from first contact through booking and completion.</p>
-      </div>
+  <!-- PAGE 3 -->
+  <div class="page">
+    <div class="page-inner">
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Workflow design</div>
+            <h2>How the workflow will operate</h2>
+            <p>The proposal below combines a shared call intake flow with separate downstream workflows for Magwheel Repair and Eastern Vehicle Service.</p>
+          </div>
 
-      <div class="grid-3">
-        <div class="highlight">
-          <h3 style="margin-bottom: 12px;">Front desk availability</h3>
-          <ul class="feature-list">
-            <li><span class="check">✓</span><span>Ensure customers get a response even during busy workshop hours.</span></li>
-            <li><span class="check">✓</span><span>Reduce dependence on manual first-touch call handling.</span></li>
-          </ul>
+          <div class="flow-shell">
+            <div class="shared-flow">
+              <h3 style="font-size: 26px; letter-spacing: -0.03em;">Shared intake flow</h3>
+              <div class="flow-row">
+                <div class="flow-step">
+                  <div class="step-num">1</div>
+                  <h4>Customer calls common number</h4>
+                  <p>The client calls a common phone number serving both Magwheel Repair and Eastern Vehicle Service.</p>
+                </div>
+                <div class="flow-step">
+                  <div class="step-num">2</div>
+                  <h4>Call forwards to Quikwit</h4>
+                  <p>The call is forwarded to Quikwit’s voice AI receptionist without any perceptible delay for the caller.</p>
+                </div>
+                <div class="flow-step">
+                  <div class="step-num">3</div>
+                  <h4>Language + business intent detected</h4>
+                  <p>The receptionist establishes the caller’s preferred language and whether the customer needs Magwheel Repair or Eastern Vehicle Service.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="branch-grid">
+              <div class="branch">
+                <div class="branch-header">
+                  <div>
+                    <div class="branch-badge">Magwheel Repair workflow</div>
+                    <h3 style="margin-top: 10px; font-size: 28px; letter-spacing: -0.03em;">Quote-first or booking-first handling for wheel repair enquiries</h3>
+                  </div>
+                </div>
+
+                <div class="workflow-stack">
+                  <div class="workflow-card">
+                    <div class="step-num">4.1</div>
+                    <h4>AI receptionist understands the issue</h4>
+                    <p>The receptionist assesses the wheel-related issue and determines whether the caller can be moved directly into appointment booking or whether a quote must be prepared first.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">4.1A</div>
+                    <h4>If booking can be done immediately</h4>
+                    <p>The AI receptionist presents available appointment slots, books the appointment, and sends the customer a confirmation via WhatsApp.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">4.1B</div>
+                    <h4>If a quote is required first</h4>
+                    <p>The receptionist gathers as much information as possible about the wheel repair need. If photos are required for an accurate quote, the call ends after informing the customer that they will receive a WhatsApp message from Magwheel that they can reply to with wheel photographs. Photos can also be sent by email if needed.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">4.2</div>
+                    <h4>Business owner is alerted</h4>
+                    <p>Once the customer sends photographs via WhatsApp or email, Nitin is alerted that a customer is waiting for a quotation. He can then review the case and close the loop by providing the quote.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">4.3</div>
+                    <h4>Quikwit follows up after quote sharing</h4>
+                    <p>Once a quotation has been provided, Quikwit chatbot continues the conversation, clarifies customer queries, and follows up until an appointment is booked or the customer chooses not to proceed.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">4.4</div>
+                    <h4>Reminder and post-service messaging</h4>
+                    <p>Quikwit chatbot sends appointment reminders and can share the invoice or receipt via WhatsApp after service completion.</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="branch">
+                <div class="branch-header">
+                  <div>
+                    <div class="branch-badge">Eastern Vehicle Service workflow</div>
+                    <h3 style="margin-top: 10px; font-size: 28px; letter-spacing: -0.03em;">Service booking and quote capture for workshop enquiries</h3>
+                  </div>
+                </div>
+
+                <div class="workflow-stack">
+                  <div class="workflow-card">
+                    <div class="step-num">5.1</div>
+                    <h4>AI receptionist understands service need</h4>
+                    <p>The receptionist identifies the type of service needed and determines whether it can directly proceed into appointment booking or whether a quotation should be generated first.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">5.1A</div>
+                    <h4>If booking can be done immediately</h4>
+                    <p>The AI receptionist presents available slots and books the appointment accordingly.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">5.1B</div>
+                    <h4>If a quote is required first</h4>
+                    <p>The AI receptionist gathers the required details to support quote preparation, such as the car make and model, kilometres driven, last service timing, and any other relevant information based on the requested service. The call ends after informing the customer that they will receive a quote via WhatsApp.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">5.2</div>
+                    <h4>Business owner is alerted</h4>
+                    <p>Nitin is alerted that a customer is waiting for a quotation, along with a link to view the captured service details. He can then review and provide the quote.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">5.3</div>
+                    <h4>Quikwit follows up after quote sharing</h4>
+                    <p>Once a quotation has been provided, Quikwit chatbot continues the conversation, addresses queries, and follows up until an appointment is booked or the customer chooses not to continue.</p>
+                  </div>
+
+                  <div class="workflow-card">
+                    <div class="step-num">5.4</div>
+                    <h4>Reminder and post-service messaging</h4>
+                    <p>Quikwit chatbot sends appointment reminders and can share the invoice or receipt via WhatsApp after service completion.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="highlight">
-          <h3 style="margin-bottom: 12px;">Better lead handling</h3>
-          <ul class="feature-list">
-            <li><span class="check">✓</span><span>Collect the right information before involving the business owner.</span></li>
-            <li><span class="check">✓</span><span>Convert more quote enquiries into scheduled work through automated follow-up.</span></li>
-          </ul>
-        </div>
-
-        <div class="highlight">
-          <h3 style="margin-bottom: 12px;">Customer experience</h3>
-          <ul class="feature-list">
-            <li><span class="check">✓</span><span>Support English and Chinese conversations from the first interaction.</span></li>
-            <li><span class="check">✓</span><span>Provide confirmations, reminders, and post-service communication via WhatsApp.</span></li>
-          </ul>
-        </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Commercials</div>
-        <h2>Bundle pricing for both businesses</h2>
-        <p>The following pricing applies to Magwheel Repair and Eastern Vehicle Service together as one bundled Quikwit deployment.</p>
-      </div>
+  <!-- PAGE 4 -->
+  <div class="page">
+    <div class="page-inner">
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Business benefits</div>
+            <h2>What this improves operationally</h2>
+            <p>The value of this setup is not only answering more calls — it is creating a smoother operating layer from first contact through booking and completion.</p>
+          </div>
 
-      <div class="pricing-grid">
-        <div class="price-card">
-          <div class="plan-name">Option 1</div>
-          <div class="price">
-            <div class="amount">NZD 199</div>
-            <div class="term">/ month</div>
-          </div>
-          <div class="annual">or <strong>NZD 1,999 / year</strong></div>
-          <ul class="price-features">
-            <li><span class="check">✓</span><span><strong>500 minutes</strong> of voice AI receptionist calls per month</span></li>
-            <li><span class="check">✓</span><span>Usage beyond 500 minutes charged at <strong>NZD 0.18 per minute</strong></span></li>
-            <li><span class="check">✓</span><span><strong>5,000 chat messages</strong> via Quikwit chatbot per month</span></li>
-            <li><span class="check">✓</span><span>Usage beyond 5,000 messages charged at <strong>NZD 1 per 100 messages</strong></span></li>
-            <li><span class="check">✓</span><span>Appointment booking &amp; management included on a complimentary basis</span></li>
-            <li><span class="check">✓</span><span>Quotation / invoicing module included on a complimentary basis</span></li>
-          </ul>
-          <div class="fit-box">
-            <strong>Expected fit</strong>
-            <span>This option should suffice for roughly <strong>180–225 monthly voice conversations</strong> and <strong>250–300 monthly chat conversations</strong> per month.</span>
-          </div>
-        </div>
+          <div class="grid-3">
+            <div class="highlight">
+              <h3 style="margin-bottom: 12px;">Front desk availability</h3>
+              <ul class="feature-list">
+                <li><span class="check">✓</span><span>Ensure customers get a response even during busy workshop hours.</span></li>
+                <li><span class="check">✓</span><span>Reduce dependence on manual first-touch call handling.</span></li>
+              </ul>
+            </div>
 
-        <div class="price-card featured">
-          <div class="plan-name">Option 2</div>
-          <div class="price">
-            <div class="amount">NZD 299</div>
-            <div class="term">/ month</div>
-          </div>
-          <div class="annual">or <strong>NZD 2,999 / year</strong></div>
-          <ul class="price-features">
-            <li><span class="check">✓</span><span><strong>900 minutes</strong> of voice AI receptionist calls per month</span></li>
-            <li><span class="check">✓</span><span>Usage beyond 900 minutes charged at <strong>NZD 0.15 per minute</strong></span></li>
-            <li><span class="check">✓</span><span><strong>10,000 chat messages</strong> via Quikwit chatbot per month</span></li>
-            <li><span class="check">✓</span><span>Usage beyond 10,000 messages charged at <strong>NZD 1 per 100 messages</strong></span></li>
-            <li><span class="check">✓</span><span>Appointment booking &amp; management included on a complimentary basis</span></li>
-            <li><span class="check">✓</span><span>Quotation / invoicing module included on a complimentary basis</span></li>
-          </ul>
-          <div class="fit-box">
-            <strong>Expected fit</strong>
-            <span>This option should suffice for roughly <strong>325–400 monthly voice conversations</strong> and <strong>500–600 monthly chat conversations</strong> per month.</span>
+            <div class="highlight">
+              <h3 style="margin-bottom: 12px;">Better lead handling</h3>
+              <ul class="feature-list">
+                <li><span class="check">✓</span><span>Collect the right information before involving the business owner.</span></li>
+                <li><span class="check">✓</span><span>Convert more quote enquiries into scheduled work through automated follow-up.</span></li>
+              </ul>
+            </div>
+
+            <div class="highlight">
+              <h3 style="margin-bottom: 12px;">Customer experience</h3>
+              <ul class="feature-list">
+                <li><span class="check">✓</span><span>Support English and Chinese conversations from the first interaction.</span></li>
+                <li><span class="check">✓</span><span>Provide confirmations, reminders, and post-service communication via WhatsApp.</span></li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="notes-grid" style="margin-top: 22px;">
-        <div class="card">
-          <h3 style="margin-bottom: 14px;">Commercial notes</h3>
-          <ul class="small-notes">
-            <li><span class="check">✓</span><span>WhatsApp messages that are part of the voice AI receptionist workflow are <strong>not included</strong> in the AI chatbot messaging quota.</span></li>
-            <li><span class="check">✓</span><span>Quikwit will work with Magwheel Repair and Eastern Vehicle Service on a continuous basis to improve and refine these tools for smooth day-to-day operations.</span></li>
-            <li><span class="check">✓</span><span>The appointment booking / management and quotation / invoicing modules are included as complimentary additions within the bundle.</span></li>
-          </ul>
-        </div>
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Commercials</div>
+            <h2>Bundle pricing for both businesses</h2>
+            <p>The following pricing applies to Magwheel Repair and Eastern Vehicle Service together as one bundled Quikwit deployment.</p>
+          </div>
 
-        <div class="fee-card">
-          <div class="mini">One-time setup item</div>
-          <div class="big">USD 50</div>
-          <p style="margin: 0; color: var(--muted);">One-time fee for procuring a phone number for the voice assistant call forwarding setup.</p>
+          <div class="pricing-grid">
+            <div class="price-card">
+              <div class="plan-name">Option 1</div>
+              <div class="price">
+                <div class="amount">NZD 199</div>
+                <div class="term">/ month</div>
+              </div>
+              <div class="annual">or <strong>NZD 1,999 / year</strong></div>
+              <ul class="price-features">
+                <li><span class="check">✓</span><span><strong>500 minutes</strong> of voice AI receptionist calls per month</span></li>
+                <li><span class="check">✓</span><span>Usage beyond 500 minutes charged at <strong>NZD 0.18 per minute</strong></span></li>
+                <li><span class="check">✓</span><span><strong>5,000 chat messages</strong> via Quikwit chatbot per month</span></li>
+                <li><span class="check">✓</span><span>Usage beyond 5,000 messages charged at <strong>NZD 1 per 100 messages</strong></span></li>
+                <li><span class="check">✓</span><span>Appointment booking &amp; management included on a complimentary basis</span></li>
+                <li><span class="check">✓</span><span>Quotation / invoicing module included on a complimentary basis</span></li>
+              </ul>
+              <div class="fit-box">
+                <strong>Expected fit</strong>
+                <span>This option should suffice for roughly <strong>180–225 monthly voice conversations</strong> and <strong>250–300 monthly chat conversations</strong> per month.</span>
+              </div>
+            </div>
+
+            <div class="price-card featured">
+              <div class="plan-name">Option 2</div>
+              <div class="price">
+                <div class="amount">NZD 299</div>
+                <div class="term">/ month</div>
+              </div>
+              <div class="annual">or <strong>NZD 2,999 / year</strong></div>
+              <ul class="price-features">
+                <li><span class="check">✓</span><span><strong>900 minutes</strong> of voice AI receptionist calls per month</span></li>
+                <li><span class="check">✓</span><span>Usage beyond 900 minutes charged at <strong>NZD 0.15 per minute</strong></span></li>
+                <li><span class="check">✓</span><span><strong>10,000 chat messages</strong> via Quikwit chatbot per month</span></li>
+                <li><span class="check">✓</span><span>Usage beyond 10,000 messages charged at <strong>NZD 1 per 100 messages</strong></span></li>
+                <li><span class="check">✓</span><span>Appointment booking &amp; management included on a complimentary basis</span></li>
+                <li><span class="check">✓</span><span>Quotation / invoicing module included on a complimentary basis</span></li>
+              </ul>
+              <div class="fit-box">
+                <strong>Expected fit</strong>
+                <span>This option should suffice for roughly <strong>325–400 monthly voice conversations</strong> and <strong>500–600 monthly chat conversations</strong> per month.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="notes-grid" style="margin-top: 22px;">
+            <div class="card">
+              <h3 style="margin-bottom: 14px;">Commercial notes</h3>
+              <ul class="small-notes">
+                <li><span class="check">✓</span><span>WhatsApp messages that are part of the voice AI receptionist workflow are <strong>not included</strong> in the AI chatbot messaging quota.</span></li>
+                <li><span class="check">✓</span><span>Quikwit will work with Magwheel Repair and Eastern Vehicle Service on a continuous basis to improve and refine these tools for smooth day-to-day operations.</span></li>
+                <li><span class="check">✓</span><span>The appointment booking / management and quotation / invoicing modules are included as complimentary additions within the bundle.</span></li>
+              </ul>
+            </div>
+
+            <div class="fee-card">
+              <div class="mini">One-time setup item</div>
+              <div class="big">USD 50</div>
+              <p style="margin: 0; color: var(--muted);">One-time fee for procuring a phone number for the voice assistant call forwarding setup.</p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <div class="eyebrow">Rollout plan</div>
-        <h2>Target timelines</h2>
-        <p>The recommended rollout model is a controlled free trial first, followed by paid usage once the setup has been validated in live operation.</p>
-      </div>
+  <!-- PAGE 5 -->
+  <div class="page">
+    <div class="page-inner">
+      <section class="section">
+        <div class="wrap">
+          <div class="section-head">
+            <div class="eyebrow">Rollout plan</div>
+            <h2>Target timelines</h2>
+            <p>The recommended rollout model is a controlled free trial first, followed by paid usage once the setup has been validated in live operation.</p>
+          </div>
 
-      <div class="timeline">
-        <div class="timeline-card">
-          <div class="timeline-step">May · Week 1</div>
-          <h4>Deploy 2-week free trial</h4>
-          <p>Quikwit deploys the bundled solution for Magwheel Repair and Eastern Vehicle Service, allowing the setup to be tested in a live operating environment.</p>
+          <div class="timeline">
+            <div class="timeline-card">
+              <div class="timeline-step">May · Week 1</div>
+              <h4>Deploy 2-week free trial</h4>
+              <p>Quikwit deploys the bundled solution for Magwheel Repair and Eastern Vehicle Service, allowing the setup to be tested in a live operating environment.</p>
+            </div>
+            <div class="timeline-card">
+              <div class="timeline-step">May · Week 3</div>
+              <h4>Start paid usage after successful trial</h4>
+              <p>If the trial performs as expected, paid usage begins in the third week of May. If any fixes or improvements are identified during the trial, paid usage begins once those items are completed.</p>
+            </div>
+          </div>
         </div>
-        <div class="timeline-card">
-          <div class="timeline-step">May · Week 3</div>
-          <h4>Start paid usage after successful trial</h4>
-          <p>If the trial performs as expected, paid usage begins in the third week of May. If any fixes or improvements are identified during the trial, paid usage begins once those items are completed.</p>
-        </div>
-      </div>
+      </section>
     </div>
-  </section>
+  </div>
 
+  <!-- ON-SCREEN ONLY -->
   <section class="cta">
     <div class="wrap">
       <div class="cta-box">
@@ -1207,5 +1295,6 @@
       <div class="footer-note">Prepared by Quikwit · AI chat and voice solutions for small businesses</div>
     </div>
   </section>
+
 </body>
 </html>
